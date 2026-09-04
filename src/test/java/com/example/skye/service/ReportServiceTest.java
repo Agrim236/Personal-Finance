@@ -52,9 +52,9 @@ class ReportServiceTest {
     void yearlyReport() {
         User user = new User("a@example.com", "h", "A", "+1111111111");
         when(transactionRepository.getIncomeByCategory(eq(user), any(), any()))
-                .thenReturn(List.of(new Object[]{"Salary", new BigDecimal("100000.00")}));
+                .thenReturn(List.<Object[]>of(new Object[]{"Salary", new BigDecimal("50000.00")}));
         when(transactionRepository.getExpensesByCategory(eq(user), any(), any()))
-                .thenReturn(List.of(new Object[]{"Rent", new BigDecimal("24000.00")}));
+                .thenReturn(List.<Object[]>of(new Object[]{"Rent", new BigDecimal("24000.00")}));git add .
 
         YearlyReportDto report = reportService.generateYearlyReport(user, 2024);
 
