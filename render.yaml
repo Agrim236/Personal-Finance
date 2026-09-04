@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: skye-finance-api
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /api/health
+    envVars:
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=75.0 -XX:+UseContainerSupport
+      - key: SPRING_PROFILES_ACTIVE
+        value: default
