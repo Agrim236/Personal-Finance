@@ -36,16 +36,11 @@
 
 > Replace the placeholder after you deploy. The README can go live on GitHub **before** hosting exists.
 
-| | Link |
-|---|---|
-| **Deployed API** | `_add URL after deploy_` |
-| **Health check** | `GET {base}/api/health` → `OK` |
+| | Link                                                                 |
+|---|----------------------------------------------------------------------|
+| **Deployed API** | `https://personal-finance-1-xvko.onrender.com/api/auth`              |
+| **Health check** | `GET https://personal-finance-1-xvko.onrender.com/api/health` → `OK` |
 
-Example once hosted:
-
-`https://your-app.onrender.com/api`
-
----
 
 ## Tech stack
 
@@ -315,7 +310,7 @@ Every functional requirement in the specification, written as a verifiable case.
 bash financial_manager_tests.sh http://localhost:8080/api
 
 # deployed
-bash financial_manager_tests.sh https://YOUR-HOST/api
+bash financial_manager_tests.sh https://personal-finance-1-xvko.onrender.com/api
 ```
 
 ```
@@ -329,7 +324,9 @@ Success Rate: 100%
 
 ## API documentation
 
-Base URL: `http://localhost:8080/api`  
+Local Base URL: `http://localhost:8080/api`  
+Deployed Base URL: `https://personal-finance-1-xvko.onrender.com/api/auth`  
+Deployed Health: `https://personal-finance-1-xvko.onrender.com/api/health` → `OK`  
 Cookie: `FINANCE_SESSION` (set on login)
 
 ### Auth
@@ -442,6 +439,11 @@ GET /api/reports/yearly/{year}
 GET /api/health
 ```
 
+**Deployed health check:** [`GET /api/health`](https://personal-finance-1-xvko.onrender.com/api/health) → `OK`
+
+The deployed health endpoint should return `OK` when the service is running.
+
+
 ---
 
 ## Getting started
@@ -456,8 +458,10 @@ mvn spring-boot:run
 
 | | URL |
 |---|---|
-| API | http://localhost:8080/api |
-| Health | http://localhost:8080/api/health |
+| Local API | http://localhost:8080/api |
+| Local Health | http://localhost:8080/api/health |
+| **Deployed API** | https://personal-finance-1-xvko.onrender.com/api |
+| **Deployed Health** | https://personal-finance-1-xvko.onrender.com/api/health |
 | H2 console | http://localhost:8080/api/h2-console |
 
 H2: `jdbc:h2:mem:skye_finance` · username `sa` · password empty
@@ -498,11 +502,11 @@ Validation:
 
 ## Database (logical)
 
-| Table | Main fields |
-|---|---|
-| `users` | id, username (email, unique), password, full_name, phone_number, created_at |
-| `categories` | id, name, type (`INCOME` / `EXPENSE`), is_custom, user_id (null for defaults) |
-| `transactions` | id, amount, date, description, category_id, user_id, created_at |
+| Table | Main fields                                                                     |
+|---|---------------------------------------------------------------------------------|
+| `users` | id, username (email, unique), password, full_name, phone_number, created_at     |
+| `categories` | id, name, type (`INCOME` / `EXPENSE`), is_custom, user_id (null for defaults)   |
+| `transactions` | id, amount, date, description, category_id, user_id, created_at                 |
 | `savings_goals` | id, goal_name, target_amount, target_date, start_date, progress fields, user_id |
 
 ---
