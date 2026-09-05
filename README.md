@@ -36,10 +36,10 @@
 
 > Replace the placeholder after you deploy. The README can go live on GitHub **before** hosting exists.
 
-| | Link                                                                 |
-|---|----------------------------------------------------------------------|
-| **Deployed API** | `https://personal-finance-1-xvko.onrender.com/api/auth`              |
-| **Health check** | `GET https://personal-finance-1-xvko.onrender.com/api/health` → `OK` |
+| | Link                                                               |
+|---|--------------------------------------------------------------------|
+| **Deployed API** | `https://personal-finance-r9ce.onrender.com/api/health`            |
+| **Health check** | `GET https://personal-finance-r9ce.onrender.com/api/health` → `OK` |
 
 
 ## Tech stack
