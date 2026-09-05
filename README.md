@@ -439,7 +439,7 @@ GET /api/reports/yearly/{year}
 GET /api/health
 ```
 
-**Deployed health check:** [`GET /api/health`](https://personal-finance-1-xvko.onrender.com/api/health) → `OK`
+**Deployed health check:** [`GET /api/health`](https://personal-finance-r9ce.onrender.com/api/health) → `OK`
 
 The deployed health endpoint should return `OK` when the service is running.
 
@@ -456,13 +456,13 @@ cd skye
 mvn spring-boot:run
 ```
 
-| | URL |
-|---|---|
-| Local API | http://localhost:8080/api |
-| Local Health | http://localhost:8080/api/health |
-| **Deployed API** | https://personal-finance-1-xvko.onrender.com/api |
-| **Deployed Health** | https://personal-finance-1-xvko.onrender.com/api/health |
-| H2 console | http://localhost:8080/api/h2-console |
+| | URL                                                     |
+|---|---------------------------------------------------------|
+| Local API | http://localhost:8080/api                               |
+| Local Health | http://localhost:8080/api/health                        |
+| **Deployed API** | https://personal-finance-r9ce.onrender.com/api/auth     |
+| **Deployed Health** | https://personal-finance-r9ce.onrender.com/api/health|
+| H2 console | http://localhost:8080/api/h2-console                    |
 
 H2: `jdbc:h2:mem:skye_finance` · username `sa` · password empty
 
